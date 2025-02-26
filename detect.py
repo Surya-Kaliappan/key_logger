@@ -51,7 +51,7 @@ def detect_keyboard_hooks():
         for proc in psutil.process_iter(['pid', 'name']):
             process_name = proc.info['name'].lower()
             if any(name in process_name for name in SUSPICIOUS_PROCESSES) and process_name not in SAFE_PROCESSES:
-                print(f"[⚠] Suspicious keylogger process detected: {process_name} (PID: {proc.info['pid']})")
+                print(f"[!] Suspicious keylogger process detected: {process_name} (PID: {proc.info['pid']})")
                 return True
     except Exception as e:
         print(f"[Error] Could not scan processes: {e}")
@@ -72,7 +72,7 @@ def detect_network_activity():
                 # Ignore safe apps
                 if not any(proc in process_name for proc in SAFE_APPS):
                     suspicious_connections.append(f"{process_name} → {remote_ip}")
-                    print(f"[⚠] Suspicious network activity: {process_name}(PID: {conn.pid}) → {remote_ip}")
+                    print(f"[!] Suspicious network activity: {process_name}(PID: {conn.pid}) → {remote_ip}")
 
             except:
                 pass
@@ -114,12 +114,12 @@ while True:
     network_issues = detect_network_activity()
 
     if detected or network_issues:
-        print("[⚠] Warning: Suspicious activity detected! ["+time.strftime("%A %Y-%m-%d %H:%M:%S")+"]\n")
+        print("[!] Warning: Suspicious activity detected! ["+time.strftime("%A %Y-%m-%d %H:%M:%S")+"]\n")
         n = 0
     else:
         if n == 0:
             n = 1
-            print("[*] No keyloggers or suspicious activity detected.")
+            print("[*] No suspicious activity detected.")
             
 
     time.sleep(5)  # Scan every 5 seconds

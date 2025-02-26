@@ -7,7 +7,7 @@ import time
 # Suspicious process names (expand this list)
 SUSPICIOUS_PROCESSES = ["keylogger", "pynput", "keyboard", "hook", "log_keys"]
 SAFE_PROCESSES = ["gsd-keyboard", "xorg", "gnome-shell", "systemd", "bash"]
-SAFE_APPS = ["chrome", "firefox", "edge", "brave", "code", "bash", "kdeconnectd", "gnome-software"]
+SAFE_APPS = ["chrome", "firefox", "edge", "brave", "code", "bash", "kdeconnectd", "gnome-software", "searchhost.exe", "svchost.exe"]
 
 # SMTP Ports for sending emails
 SMTP_PORTS = {25, 465, 587}

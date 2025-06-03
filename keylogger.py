@@ -42,9 +42,9 @@ ctrl_pressed = False
 running = True  
 
 # Email configuration
-SENDER_EMAIL = "jsonprojectofficial@gmail.com"     # sender mail address   
-SENDER_PASSWORD = "fkly hier xfyk tvmr"         # Use Google App Password
-RECEIVER_EMAIL = "jsonprojectofficial@gmail.com"      # receiver mail address
+SENDER_EMAIL = ""     # sender mail address   
+SENDER_PASSWORD = ""         # Use Google App Password
+RECEIVER_EMAIL = ""      # receiver mail address
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
